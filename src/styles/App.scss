@@ -1,0 +1,51 @@
+@import "base";
+
+body {
+    color:#fff;
+    background: #222;
+}
+
+section{
+    @extend %absolute-middle;
+    padding:60px;
+    @include outer-container();
+    width:100%;
+    div.image-holder{
+        @include span-columns(8);
+        img{
+           width:100%;
+        }
+    }
+    div.content-holder{
+        @include span-columns(4);
+    }
+    svg use{
+        fill:#fff;
+    }
+    header{
+        padding-bottom:15px;
+        margin-bottom:15px;
+        border-bottom:2px solid #fff;
+        position:relative;
+        top:-6px;
+        @include clearfix();
+        ul{
+            @include outer-container();
+            float:right;
+        }
+        ul li{
+            @include span-columns(4);
+            display:inline-block;
+            font-size:16px;
+            font-family:$georgia;
+        }
+        svg{
+            @include size(20px);
+        }
+    }
+    h2{
+        font-size:28px;
+        float:left;
+        font-weight:700;
+    }
+}

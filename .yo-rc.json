@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "dribbbleScreensaver",
+    "style": "scss",
+    "postcss": false
+  }
+}
