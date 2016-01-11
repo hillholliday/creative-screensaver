@@ -2,6 +2,7 @@ require('styles/App.scss');
 
 
 require("!script!../scripts/jquery-2.1.4.js");
+require("!script!../scripts/huey.js");
 
 import React from 'react';
 
@@ -16,11 +17,7 @@ class AppComponent extends React.Component {
  	rotateImages(){
  		var that = this;
 
- 		console.log("current count:" + that.state.count);
- 		console.log("list length:" + that.state.dribbbleList.length);
-
  		setInterval(function(){
-
 		 	if(that.state.count === (that.state.dribbbleList.length - 1)){
 	 			that.setState({
 	 				count: 0
@@ -30,7 +27,7 @@ class AppComponent extends React.Component {
  			that.setState({
 				count: that.state.count + 1
 			});
- 		}, 5000);
+ 		}, 6000);
  	}
  	loadImages(){
 	  	var that = this;
@@ -57,6 +54,23 @@ class AppComponent extends React.Component {
 		this.loadImages();
 		console.log('will mount');
 	}
+	adjustColors(current){
+		huey(current, function(error, rgb, image) {
+			console.log(error);
+			if(rgb == null){
+				$('body').css('background-color','rgb(25,25,25)');
+			}
+			else{
+				var red = rgb[0]
+				var green = rgb[1]
+				var blue = rgb[2]
+
+				$('body').css('background-color','rgb('+red+','+green+','+blue+')');
+			}
+
+			$('body').css('background-color','rgb('+red+','+green+','+blue+')');
+		});
+	}
 	componentWillReceiveProps(){
 		this.loadImages();
 		console.log('will receive props');
@@ -65,6 +79,7 @@ class AppComponent extends React.Component {
 		console.log('mounted');
 	}
 	render() {
+		// loading app
 		if (!this.state.dribbbleList) {
 			return(
 				<div className="loading-screen">
@@ -103,6 +118,7 @@ class AppComponent extends React.Component {
 			 				<div dangerouslySetInnerHTML={{__html : current.description}}></div>
 	    				</div>
 		 			</section>
+		 			<div className="background-image" style={{backgroundImage: 'url(' + img + ')'}}></div>
 	    		</div>
 	    	);
 		}

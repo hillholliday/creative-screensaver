@@ -5,19 +5,36 @@ body {
     background: #222;
 }
 
+.background-image{
+    @include position(fixed, 0px 0px 0px 0px);
+    z-index:1;
+    background-size:120%;
+    background-repeat:no-repeat;
+    background-position:center;
+    -webkit-filter: blur(45px);
+    -moz-filter: blur(45px);
+    -o-filter: blur(45px);
+    -ms-filter: blur(45px);
+    filter: blur(45px);
+}
+
 section{
     @extend %absolute-middle;
-    padding:60px;
+    background-color:rgba(#000,0.66);
+    z-index:2;
     @include outer-container();
+    max-width:1000px;
     width:100%;
     div.image-holder{
         @include span-columns(8);
+        margin-bottom:-2px;
         img{
            width:100%;
         }
     }
     div.content-holder{
         @include span-columns(4);
+        padding:40px 2.35765% 400px 0px;
     }
     svg use{
         fill:#fff;
