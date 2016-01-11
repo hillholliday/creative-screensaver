@@ -43,6 +43,7 @@ class AppComponent extends React.Component {
 				dribbbleList:data 
 			});
 			that.rotateImages();
+			$('body').addClass('ready');
 		})
 		.fail(function(error) {
 			console.log(error);

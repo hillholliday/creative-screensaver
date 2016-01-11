@@ -41,11 +41,10 @@ section{
     @include outer-container();
     max-width:1000px;
     width:100%;
-    @include animation(rotateModal 6s linear infinite);
     div.image-holder{
         @include span-columns(8);
         margin-bottom:-2px;
-        margin-top:-1px;
+        margin-top:0px;
         img{
            width:100%;
         }
@@ -175,7 +174,15 @@ section{
     background-repeat:no-repeat;
     background-position:center;
     @include blur(45px);
-    @include animation(rotateBG 6s linear infinite);
+}
+
+body.ready{
+    section{
+        @include animation(rotateModal 6s linear infinite);
+    }
+    .background-image{
+        @include animation(rotateBG 6s linear infinite);
+    }
 }
 
 .hh-logo{
