@@ -5,18 +5,34 @@ body {
     background: #222;
 }
 
-.background-image{
-    @include position(fixed, 0px 0px 0px 0px);
-    z-index:1;
-    background-size:120%;
-    background-repeat:no-repeat;
-    background-position:center;
-    -webkit-filter: blur(45px);
-    -moz-filter: blur(45px);
-    -o-filter: blur(45px);
-    -ms-filter: blur(45px);
-    filter: blur(45px);
+
+@include keyframes(rotateModal){
+    0%{
+        @include opacity(0);
+        @include transform(translateX(-50%) translateY(-50%) scale(0.9) translate3d(0,0,0));
+    }
+    5%{
+        @include opacity(0);
+        @include transform(translateX(-50%) translateY(-50%) scale(0.9) translate3d(0,0,0));
+    }
+    15%{
+        @include opacity(1);
+        @include transform(translateX(-50%) translateY(-50%) scale(1) translate3d(0,0,0));
+    }
+    85%{
+        @include opacity(1);
+        @include transform(translateX(-50%) translateY(-50%) scale(1) translate3d(0,0,0));
+    }
+    95%{
+        @include opacity(0);
+        @include transform(translateX(-50%) translateY(-50%) scale(1.1) translate3d(0,0,0));
+    }
+    100%{
+        @include opacity(0);
+        @include transform(translateX(-50%) translateY(-50%) scale(0.9) translate3d(0,0,0));
+    }
 }
+
 
 section{
     @extend %absolute-middle;
@@ -25,44 +41,161 @@ section{
     @include outer-container();
     max-width:1000px;
     width:100%;
+    @include animation(rotateModal 6s linear infinite);
     div.image-holder{
         @include span-columns(8);
         margin-bottom:-2px;
+        margin-top:-1px;
         img{
            width:100%;
         }
     }
     div.content-holder{
         @include span-columns(4);
-        padding:40px 2.35765% 400px 0px;
+        position:relative;
+        .content{
+            @include position(absolute, 40px 20px 40px 0px);
+            word-wrap: break-word;
+            & > div{
+                border-top:2px solid #fff;
+                padding-top:20px;
+                margin-top:15px;
+            }
+        }
     }
     svg use{
         fill:#fff;
     }
     header{
-        padding-bottom:15px;
-        margin-bottom:15px;
-        border-bottom:2px solid #fff;
         position:relative;
         top:-6px;
         @include clearfix();
         ul{
             @include outer-container();
-            float:right;
+            margin:20px 0 10px;
         }
         ul li{
             @include span-columns(4);
             display:inline-block;
             font-size:16px;
             font-family:$georgia;
+            @include span-columns(4);
+            text-align:center;
         }
         svg{
-            @include size(20px);
+            @include size(15px);
+            position:relative;
+            top:4px;
+            left:-5px;
         }
     }
     h2{
         font-size:28px;
-        float:left;
         font-weight:700;
     }
+    p{
+        font-size:16px;
+        margin-bottom:1em;
+        line-height:1.375;
+        a{
+            color:#fff;
+        }
+        &:first-of-type{
+            font-size:1.25rem;
+        }
+    }
+}
+
+@media all and(min-width:1400px){
+    section{
+        max-width:1200px;
+        h2{
+            font-size:32px;
+        }
+        p,header ul li{
+            font-size:18px;
+        }
+        header svg{
+            @include size(17px);
+        }
+    }
+}
+
+@media all and(min-width:1600px){
+    section{
+        max-width:1400px;
+    }
+}
+
+
+
+@include keyframes(rotateBG){
+    0%{
+        @include opacity(0);
+        @include blur(100px);
+        background-size:105%;
+        @include transform(translate3d(0,0,0));
+    }
+    5%{
+        @include opacity(0);
+        @include blur(100px);
+        background-size:105%;
+        @include transform(translate3d(0,0,0));
+    }
+    15%{
+        @include opacity(1);
+        @include blur(45px);
+        background-size:105%;
+        @include transform(translate3d(0,0,0));
+    }
+    85%{
+        @include opacity(1);
+        @include blur(45px);
+        background-size:130%;
+        @include transform(translate3d(0,0,0));
+    }
+    95%{
+        @include opacity(0);
+        @include blur(100px);
+        background-size:130%;
+        @include transform(translate3d(0,0,0));
+    }
+    100%{
+        @include opacity(0);
+        @include blur(100px);
+        background-size:105%;
+        @include transform(translate3d(0,0,0));
+    }
+}
+
+.background-image{
+    @include position(fixed, 0px 0px 0px 0px);
+    z-index:1;
+    background-size:120%;
+    background-repeat:no-repeat;
+    background-position:center;
+    @include blur(45px);
+    @include animation(rotateBG 6s linear infinite);
+}
+
+.hh-logo{
+    svg{
+        @include size(5vw);
+        @extend %absolute-middle;
+    }
+    svg path{
+        fill:#fff;
+    }
+}
+
+.loading-screen .hh-logo:after{
+    content:"Now loading";
+    display:block;
+    width:100%;
+    color:#fff;
+    font-size:1.5vw;
+    font-family:$georgia;
+    font-style: italic;
+    text-align:center;
+    @include position(absolute, 56.75% 0px auto 0px);
 }
