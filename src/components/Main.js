@@ -1,8 +1,5 @@
 require('styles/App.scss');
-
-
 require("!script!../scripts/jquery-2.1.4.js");
-require("!script!../scripts/huey.js");
 
 import React from 'react';
 
@@ -57,23 +54,6 @@ class AppComponent extends React.Component {
 		this.loadImages();
 		console.log('will mount');
 	}
-	adjustColors(current){
-		huey(current, function(error, rgb, image) {
-			console.log(error);
-			if(rgb == null){
-				$('body').css('background-color','rgb(25,25,25)');
-			}
-			else{
-				var red = rgb[0]
-				var green = rgb[1]
-				var blue = rgb[2]
-
-				$('body').css('background-color','rgb('+red+','+green+','+blue+')');
-			}
-
-			$('body').css('background-color','rgb('+red+','+green+','+blue+')');
-		});
-	}
 	componentWillReceiveProps(){
 		this.loadImages();
 		console.log('will receive props');
@@ -102,6 +82,8 @@ class AppComponent extends React.Component {
 			else{
 				img = current.images.normal;
 			}
+
+			console.log(window.location.pathname);
 
 			var description;
 
