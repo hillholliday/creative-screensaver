@@ -34,13 +34,18 @@ body {
 }
 
 
-section{
+section.gallery-holder{
     @extend %absolute-middle;
     background-color:rgba(#000,0.66);
     z-index:2;
     @include outer-container();
     max-width:1000px;
     width:100%;
+    color:#fff;
+    text-align:left;
+    p{
+        text-align:left;
+    }
     div.image-holder{
         @include span-columns(8);
         margin-bottom:-2px;
@@ -106,7 +111,7 @@ section{
 }
 
 @media all and(min-width:1400px){
-    section{
+    section.gallery-holder{
         max-width:1200px;
         h2{
             font-size:32px;
@@ -121,7 +126,7 @@ section{
 }
 
 @media all and(min-width:1600px){
-    section{
+    section.gallery-holder{
         max-width:1400px;
     }
 }
@@ -177,7 +182,7 @@ section{
 }
 
 body.ready{
-    section{
+    section.gallery-holder{
         @include animation(rotateModal 6s linear infinite);
     }
     .background-image{

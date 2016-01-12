@@ -1,9 +1,11 @@
 'use strict';
 
+require('styles//Gallery.scss');
+
 import React from 'react';
 import { History } from 'react-router';
 
-require('styles//Gallery.scss');
+var config = require('config');
 
 class GalleryComponent extends React.Component {
   constructor(props){
@@ -33,7 +35,7 @@ class GalleryComponent extends React.Component {
  	loadImages(){
 	  	var that = this;
 		$.ajax({
-			url: 'http://dribbble-screensaver-api.hhcc.dev/api/random',
+			url: config.default.apiUrl+'api/random',
 			type: 'GET',
 		})
 		.done(function(data) {
@@ -95,7 +97,7 @@ class GalleryComponent extends React.Component {
 
 			return (
 	    		<div className="index">
-	    			<section>
+	    			<section className="gallery-holder">
 	    				<div className="image-holder">
 	    					<img src={img} alt={current.username}/>
 	    				</div>
