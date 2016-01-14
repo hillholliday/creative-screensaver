@@ -187,10 +187,10 @@ section.gallery-holder{
 
 body.ready{
     section.gallery-holder{
-        @include animation(rotateModal $galleryDuration linear infinite);
+        @include animation(rotateModal $galleryDuration linear infinite forwards);
     }
     .background-image{
-        @include animation(rotateBG $galleryDuration linear infinite);
+        @include animation(rotateBG $galleryDuration linear infinite forwards);
     }
 }
 
