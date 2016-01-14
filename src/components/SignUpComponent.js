@@ -4,6 +4,7 @@ require('styles//SignUp.scss');
 
 import React from 'react';
 import { History } from 'react-router';
+import { Lifecycle } from 'react-router'
 
 var config = require('config');
 
@@ -31,6 +32,9 @@ class SignUpComponent extends React.Component {
   	
   }
   render() {
+  	if(window.location.pathname === "/"){
+  		$('body').addClass('signup-ready');
+  	}
     return (
       <div className="signup-component">
         <section className="intro">

@@ -87,13 +87,13 @@ class GalleryComponent extends React.Component {
 				img = current.images.normal;
 			}
 
-			console.log(window.location.pathname);
-
 			var description;
 
 			if(current.description){
 				description = <div dangerouslySetInnerHTML={{__html : current.description}}></div>;
 			}
+
+			$('.signup-component').hide();
 
 			return (
 	    		<div className="index">
