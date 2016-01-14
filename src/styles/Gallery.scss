@@ -40,7 +40,9 @@ $galleryDuration: 14s;
 
 
 section.gallery-holder{
-    @extend %absolute-middle;
+    position:fixed;
+    top:50%;
+    left:50%;
     background-color:rgba(#000,0.66);
     z-index:2;
     @include outer-container();
