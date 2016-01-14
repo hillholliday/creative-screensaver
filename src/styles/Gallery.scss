@@ -38,7 +38,7 @@ $galleryDuration: 14s;
 
 section.gallery-holder{
     position:fixed;
-    top:25%;
+    top:50%;
     left:50%;
     background-color:rgba(#000,0.66);
     z-index:2;
@@ -187,10 +187,10 @@ section.gallery-holder{
 
 body.ready{
     section.gallery-holder{
-        @include animation(rotateModal $galleryDuration 1s linear infinite);
+        @include animation(rotateModal $galleryDuration linear infinite);
     }
     .background-image{
-        @include animation(rotateBG $galleryDuration 1s linear infinite);
+        @include animation(rotateBG $galleryDuration linear infinite);
     }
 }
 
