@@ -25,7 +25,7 @@ $galleryDuration: 14s;
         @include opacity(1);
         @include transform(translateX(-50%) translateY(-50%) scale(1) translateZ(0));
     }
-    90%,95%{
+    90%{
         @include opacity(0);
         @include transform(translateX(-50%) translateY(-50%) scale(1.1) translateZ(0));
     }
@@ -162,7 +162,7 @@ section.gallery-holder{
         background-size:125%;
         @include transform(translateZ(0));
     }
-    90%,95%{
+    90%{
         @include opacity(0);
         @include blur(80px);
         background-size:125%;
@@ -187,10 +187,10 @@ section.gallery-holder{
 
 body.ready{
     section.gallery-holder{
-        @include animation(rotateModal $galleryDuration linear infinite);
+        @include animation(rotateModal $galleryDuration 1s linear infinite);
     }
     .background-image{
-        @include animation(rotateBG $galleryDuration linear infinite);
+        @include animation(rotateBG $galleryDuration 1s linear infinite);
     }
 }
 

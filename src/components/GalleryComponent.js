@@ -17,7 +17,7 @@ class GalleryComponent extends React.Component {
  	}
  	rotateImages(){
  		var that = this;
- 		var timer = 14000;
+ 		var timer = 15000;
 
  		setInterval(function(){
 
