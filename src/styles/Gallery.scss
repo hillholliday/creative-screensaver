@@ -13,7 +13,7 @@ $galleryDuration: 14s;
         @include opacity(0);
         @include transform(translateX(-50%) translateY(-50%) scale(0.9) translateZ(0));
     }
-    5%{
+    10%{
         @include opacity(0);
         @include transform(translateX(-50%) translateY(-50%) scale(0.9) translateZ(0));
     }
@@ -42,7 +42,7 @@ $galleryDuration: 14s;
 
 section.gallery-holder{
     position:fixed;
-    top:50%;
+    top:25%;
     left:50%;
     background-color:rgba(#000,0.66);
     z-index:2;
@@ -144,43 +144,43 @@ section.gallery-holder{
 @include keyframes(rotateBG){
     0%{
         @include opacity(0);
-        @include blur(100px);
+        @include blur(80px);
         background-size:105%;
         @include transform(translateZ(0));
     }
-    5%{
+    10%{
         @include opacity(0);
-        @include blur(100px);
+        @include blur(80px);
         background-size:105%;
         @include transform(translateZ(0));
     }
     15%{
         @include opacity(1);
-        @include blur(45px);
+        @include blur(30px);
         background-size:105%;
         @include transform(translateZ(0));
     }
     85%{
         @include opacity(1);
-        @include blur(45px);
-        background-size:130%;
+        @include blur(30px);
+        background-size:125%;
         @include transform(translateZ(0));
     }
     90%{
         @include opacity(0);
-        @include blur(100px);
-        background-size:130%;
+        @include blur(80px);
+        background-size:125%;
         @include transform(translateZ(0));
     }
     95%{
         @include opacity(0);
-        @include blur(100px);
-        background-size:130%;
+        @include blur(80px);
+        background-size:125%;
         @include transform(translateZ(0));
     }
     100%{
         @include opacity(0);
-        @include blur(100px);
+        @include blur(80px);
         background-size:105%;
         @include transform(translateZ(0));
     }
@@ -192,7 +192,7 @@ section.gallery-holder{
     background-size:120%;
     background-repeat:no-repeat;
     background-position:center;
-    @include blur(45px);
+    @include blur(30px);
 }
 
 body.ready{
