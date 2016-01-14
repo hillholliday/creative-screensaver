@@ -21,13 +21,9 @@ $galleryDuration: 14s;
         @include opacity(1);
         @include transform(translateX(-50%) translateY(-50%) scale(1) translateZ(0));
     }
-    85%{
+    90%{
         @include opacity(1);
         @include transform(translateX(-50%) translateY(-50%) scale(1) translateZ(0));
-    }
-    90%{
-        @include opacity(0);
-        @include transform(translateX(-50%) translateY(-50%) scale(1.1) translateZ(0));
     }
     100%{
         @include opacity(0);
@@ -156,15 +152,9 @@ section.gallery-holder{
         background-size:105%;
         @include transform(translateZ(0));
     }
-    85%{
+    90%{
         @include opacity(1);
         @include blur(30px);
-        background-size:125%;
-        @include transform(translateZ(0));
-    }
-    90%{
-        @include opacity(0);
-        @include blur(80px);
         background-size:125%;
         @include transform(translateZ(0));
     }
