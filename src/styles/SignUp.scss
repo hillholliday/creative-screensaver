@@ -2,19 +2,20 @@
 
 $primary:#0484ce;
 
-.signup-component{
+.signup-component section.intro{
 	@include opacity(0);
 	@extend %default-transition;
 }
 
 body.signup-ready{
-	.signup-component{
+	.signup-component section.intro{
 		@include opacity(1);
 	}
 }
 
 section.intro,
-section.thanks{
+section.thanks,
+section.instructions{
 	font-family:$helvetica;
 	font-size:16px;
 	line-height:1.275;
@@ -34,6 +35,14 @@ section.thanks{
 
 	h1{
 		font-size:32px;
+	}
+	ol li{
+		color:#333;
+		text-align:left;
+		list-style-type:lower-roman;
+		margin-bottom:0.7em;
+		padding-left:0.3em;
+		margin-left:1.25em;
 	}
 }
 
@@ -131,7 +140,8 @@ input:focus{
 }
 
 section.intro,
-section.thanks{
+section.thanks,
+section.instructions{
 	@extend %default-transition;
 	max-width:500px;
 	margin:0 auto;
@@ -140,7 +150,8 @@ section.thanks{
 
 @media all and(min-height:500px){
 	section.intro,
-	section.thanks{
+	section.thanks,
+	section.instructions{
 		@include position(absolute, 50% auto auto 50%);
 		@include transform(translateX(-50%) translateY(-50%));
 	}
@@ -159,7 +170,21 @@ a.download{
 	@extend %default-transition;
 }
 
-section.thanks{
+button.show-instructions{
+	@include position(fixed, auto auto 20px 50%);
+	z-index:3;
+	@include transform(translateX(-50%));
+	@include appearance(none);
+	color:#fff;
+	background-color:transparent;
+	border:none;
+	font-family:$georgia;
+	font-size:16px;
+	font-style:italic;
+}
+
+section.thanks,
+section.instructions{
 	text-align:center;
 	@extend %absolute-middle;
 	top:55%;
@@ -206,6 +231,28 @@ a.download{
 	}
 }
 
+input.primary-action{
+	@extend %default-transition;
+	&:hover{
+		background-color:darken($primary,10%);
+	}
+}
+
+.hh-logo{
+	display:block;
+	@include position(absolute, 0px 0px 0px 0px);
+	height:100%;
+	width:100%;
+	pointer-events:none;
+    svg{
+        @include size(5vw);
+        @extend %absolute-middle;
+    }
+    svg path{
+        fill:#fff;
+    }
+}
+
 body.success{
 	section.intro{
 		top:55%;
@@ -220,9 +267,20 @@ body.success{
 }
 
 
-input.primary-action{
-	@extend %default-transition;
-	&:hover{
-		background-color:darken($primary,10%);
+section.instructions{
+	@include opacity(0);
+	top:150%;
+	@include transition-delay(0.3s);
+}
+
+
+body.instructions-shown .signup-component{
+	section.intro,
+	section.thanks{
+		@include opacity(0);
+	}
+	section.instructions{
+		top:45%;
+		@include opacity(1);
 	}
 }

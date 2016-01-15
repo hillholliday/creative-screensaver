@@ -31,6 +31,16 @@ class SignUpComponent extends React.Component {
   	});
   	
   }
+  toggleInstructions(){
+  	$('body').toggleClass('instructions-shown');
+
+  	if($('body').hasClass('instructions-shown')){
+  		$('button.show-instructions').html('Hide Installation Instructions');
+  	}
+  	else{
+  		$('button.show-instructions').html('Installation Instructions');
+  	}
+  }
   render() {
   	if(window.location.pathname === "/"){
   		setTimeout(function(){
@@ -80,7 +90,22 @@ class SignUpComponent extends React.Component {
 				<span>Download the screensaver here</span>
 			</a>
 		</section>
-        <div className="hh-logo" dangerouslySetInnerHTML={{__html: '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="#231F20"><path d="M29.458 53.664V6.336l-9.504 4.945v13.65L8.11 26.62l-.01-9.15-7.817 4.053v19.86L8.1 44.674V34.268l11.854.554v14.846l9.504 3.996zM51.9 17.47l-.01 9.148-11.843-1.687V11.28l-9.505-4.944v47.328l9.505-3.996V34.822l11.854-.554v10.407l7.817-3.296V21.52L51.9 17.47z"/></g></svg>'}}></div>
+
+		<section className="instructions">
+			<h2>Instructions</h2>
+			<ol>
+				<li>Download the screensaver.zip file</li>
+				<li>Then you can unarchive the .zip <strong>right-click</strong> on the HHCC Creative.saver file, and click <strong>open</strong>. </li>
+				<li>This should open up your Screensaver preferences. Hit install, and select HHCC Creative as your default. </li>
+				<li>You can preview the screensaver full screen by clicking on the small preview to the right of the screensaver’s list.</li> 
+			</ol>
+		</section>
+
+		<button className="show-instructions" onClick={this.toggleInstructions}>
+			Installation Instructions
+		</button>
+
+        <div className="hh-logo" dangerouslySetInnerHTML={{__html: '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g><path d="M29.458 53.664V6.336l-9.504 4.945v13.65L8.11 26.62l-.01-9.15-7.817 4.053v19.86L8.1 44.674V34.268l11.854.554v14.846l9.504 3.996zM51.9 17.47l-.01 9.148-11.843-1.687V11.28l-9.505-4.944v47.328l9.505-3.996V34.822l11.854-.554v10.407l7.817-3.296V21.52L51.9 17.47z"/></g></svg>'}}></div>
       </div>
     );
   }
