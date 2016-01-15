@@ -33,13 +33,15 @@ class SignUpComponent extends React.Component {
   }
   render() {
   	if(window.location.pathname === "/"){
-  		$('body').addClass('signup-ready');
+  		setTimeout(function(){
+  			$('body').addClass('signup-ready');
+  		},1000);
   	}
     return (
       <div className="signup-component">
         <section className="intro">
 			<h1>Creative Screensaver</h1>
-			<p>Signup to be shown in Hill Holliday’s creative screensaver showcase:</p>
+			<p>Signup to be featured in Hill Holliday’s creative screensaver:</p>
 			<form method="post" action="" accept-charset="UTF-8" onSubmit={this.handleSubmit}>
 				<input type="hidden" name="action" value="guestEntries/saveEntry"/>
 			    <input type="hidden" name="redirect" value="/"/>
@@ -78,6 +80,7 @@ class SignUpComponent extends React.Component {
 				<span>Download the screensaver here</span>
 			</a>
 		</section>
+        <div className="hh-logo" dangerouslySetInnerHTML={{__html: '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="#231F20"><path d="M29.458 53.664V6.336l-9.504 4.945v13.65L8.11 26.62l-.01-9.15-7.817 4.053v19.86L8.1 44.674V34.268l11.854.554v14.846l9.504 3.996zM51.9 17.47l-.01 9.148-11.843-1.687V11.28l-9.505-4.944v47.328l9.505-3.996V34.822l11.854-.554v10.407l7.817-3.296V21.52L51.9 17.47z"/></g></svg>'}}></div>
       </div>
     );
   }

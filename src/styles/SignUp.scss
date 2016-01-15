@@ -18,6 +18,8 @@ section.thanks{
 	font-family:$helvetica;
 	font-size:16px;
 	line-height:1.275;
+	position:relative;
+	z-index:2;
 	h1,h2,h3{
 		font-weight:700;
 		color:#fff;
@@ -27,7 +29,7 @@ section.thanks{
 	}
 
 	h1 + p{
-		margin-bottom:20px;
+		margin:5px 0 20px;
 	}
 
 	h1{
@@ -59,6 +61,7 @@ input[type="email"]{
 	padding:1em;
 	border:1px solid darken(#fff,10%);
 	font-size:14px;
+	margin-bottom:12px;
 }
 
 fieldset{
@@ -84,12 +87,12 @@ fieldset{
 section.intro form{
 	background-color:#fff; 
 	border:2px solid darken(#fff,20%);
-	padding:15px 30px 15px 30px;
+	padding:30px 30px 15px 30px;
 	color:#333;
 	input{
 		width:100%;
 		display:block;
-		margin-bottom:10px;
+		margin-bottom:20px;
 		@extend %default-transition;
 	}
 	p{
@@ -98,9 +101,9 @@ section.intro form{
 		font-size:12px;
 		color:lighten(#333,50%);
 		font-family:$georgia;
-		margin-top:-4px;
+		margin-top:-12px;
 		text-align:left;
-		margin-bottom:0px;
+		margin-bottom:16px;
 		a{
 			color:rgba(lighten($primary,20%), 0.75);
 			text-decoration: none;
@@ -109,10 +112,11 @@ section.intro form{
 }
 
 label{
+	pointer-events:none;
 	background-color:#fff;
 	font-weight:700;
-	@include position(absolute,0.85em auto auto 15px);
-	padding:2px;
+	@include position(absolute,-0.5em auto auto 15px);
+	padding:4px 2px;
 	color:lighten(#333,40%);
 	@extend %default-transition;
 }
@@ -120,9 +124,9 @@ label{
 input:focus{
 	border-color:$primary;
 	&+ label{
-		top:.15em;
+		top:-.8em;
 		color:$primary;
-		background-color:transparent;
+		background-color:#fff;
 	}
 }
 
@@ -142,7 +146,7 @@ section.thanks{
 	}
 }
 
-a.download.download{
+a.download{
 	margin:40px auto 0px;
 	padding:1em;
 	@include border-radius(5px);
@@ -192,7 +196,14 @@ input.primary-action{
 	color:#fff;
 	font-weight:700;
 	text-transform:uppercase;
-	margin-top:10px;
+}
+
+a.download{
+	@extend %default-transition;
+	&:hover{
+		background-color:$primary;
+		border-color:$primary;
+	}
 }
 
 body.success{
@@ -205,5 +216,13 @@ body.success{
 		top:50%;
 		@include opacity(1);
 		pointer-events:auto;
+	}
+}
+
+
+input.primary-action{
+	@extend %default-transition;
+	&:hover{
+		background-color:darken($primary,10%);
 	}
 }
