@@ -9,7 +9,8 @@ $primary:#0484ce;
 
 body.signup-ready{
 	overflow:visible;
-	.signup-component section.intro{
+	.signup-component section.intro,
+	button.show-instructions{
 		@include opacity(1);
 	}
 }
@@ -178,6 +179,8 @@ a.download{
 }
 
 button.show-instructions{
+	@include opacity(0);
+	@extend %default-transition;
 	@include position(fixed, auto auto 20px 50%);
 	z-index:3;
 	@include transform(translateX(-50%));
