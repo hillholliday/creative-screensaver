@@ -8,8 +8,15 @@ $primary:#0484ce;
 }
 
 body.signup-ready{
+	overflow:visible;
 	.signup-component section.intro{
 		@include opacity(1);
+	}
+}
+
+@media all and(min-height:600px){
+	body.signup-ready{
+		overflow:hidden;
 	}
 }
 
@@ -253,20 +260,6 @@ input.primary-action{
     }
 }
 
-body.success{
-	section.intro{
-		top:55%;
-		@include opacity(0);
-		pointer-events:none;
-	}
-	section.thanks{
-		top:50%;
-		@include opacity(1);
-		pointer-events:auto;
-	}
-}
-
-
 section.instructions{
 	@include opacity(0);
 	top:150%;
@@ -282,5 +275,25 @@ body.instructions-shown .signup-component{
 	section.instructions{
 		top:45%;
 		@include opacity(1);
+	}
+}
+
+@media all and(max-width:700px){
+	a.download,
+	button.show-instructions{
+		display:none;
+	}
+}
+
+body.success .signup-component{
+	section.intro{
+		top:55%;
+		@include opacity(0);
+		pointer-events:none;
+	}
+	section.thanks{
+		top:50%;
+		@include opacity(1);
+		pointer-events:auto;
 	}
 }
