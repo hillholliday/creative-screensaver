@@ -35,12 +35,8 @@ section.instructions{
 	}
 	p{
 		color:#fff;
-	}
-
-	h1 + p{
 		margin:5px 0 20px;
 	}
-
 	h1{
 		font-size:32px;
 	}
@@ -160,7 +156,7 @@ section.instructions{
 	section.intro,
 	section.thanks,
 	section.instructions{
-		@include position(absolute, 50% auto auto 50%);
+		@include position(absolute, 48% auto auto 50%);
 		@include transform(translateX(-50%) translateY(-50%));
 	}
 }

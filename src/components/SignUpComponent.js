@@ -51,8 +51,8 @@ class SignUpComponent extends React.Component {
       <div className="signup-component">
         <section className="intro">
 			<h1>Creative Screensaver</h1>
-			<p>We know you love to create amazing design work outside of the agency and we know you post them on Dribbble.  Let’s showcase that work with everyone else here.</p>
-			<p>Signup to be featured on Hill Holliday’s creative screensaver:</p>
+			<p>We know you love to create amazing design work outside of the agency and we know you post them on Dribbble.  Let’s showcase that work with everyone else here. Signup below to be featured.</p>
+
 			<form method="post" action="" accept-charset="UTF-8" onSubmit={this.handleSubmit}>
 				<input type="hidden" name="action" value="guestEntries/saveEntry"/>
 			    <input type="hidden" name="redirect" value="/"/>
