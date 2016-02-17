@@ -69,6 +69,11 @@ a.download{
 	max-width:340px;
 }
 
+a.download.not-applicable{
+	cursor:not-allowed;
+	pointer-events:none;
+}
+
 input[type="text"],
 input[type="email"]{
 	padding:1em;

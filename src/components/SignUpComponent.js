@@ -41,6 +41,16 @@ class SignUpComponent extends React.Component {
   		$('button.show-instructions').html('Installation Instructions');
   	}
   }
+  componentDidMount(){
+    if ( window.navigator.userAgent.indexOf("Windows NT") != -1){
+        $('button.show-instructions').each(function(){$(this).hide()});
+        $('a.download').each(function(){
+            var el = $(this);
+            el.addClass('not-applicable');
+            el.find('span').text('Not avaialble for Windows :(');
+        });
+    }
+  }
   render() {
   	if(window.location.pathname === "/"){
   		setTimeout(function(){
