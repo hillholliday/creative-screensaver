@@ -148,6 +148,7 @@ section.thanks,
 section.instructions{
 	@extend %default-transition;
 	max-width:500px;
+	width:100%;
 	margin:0 auto;
 	padding:15px;
 }
@@ -214,6 +215,10 @@ section.instructions{
 	a.download{
 		margin-bottom:10px;
 	}
+	img{
+		width:100%;
+		margin:10px auto 20px;
+	}
 }
 
 a.download.primary-action,
@@ -270,6 +275,7 @@ body.instructions-shown .signup-component{
 	section.intro,
 	section.thanks{
 		@include opacity(0);
+		pointer-events:none;
 	}
 	section.instructions{
 		top:45%;

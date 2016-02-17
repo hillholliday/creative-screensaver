@@ -93,10 +93,11 @@ class SignUpComponent extends React.Component {
 		</section>
 
 		<section className="instructions">
-			<h2>Instructions</h2>
-			<ol>
+			<img src="/images/install-instructions.gif"/>
+            <ol>
 				<li>Download the screensaver.zip file</li>
-				<li>Then you can unarchive the .zip <strong>right-click</strong> on the HHCC Creative.saver file, and click <strong>open</strong>. </li>
+				<li>Unarchive the .zip.</li> 
+                <li><strong>right-click</strong> on the HHCC Creative.saver file, and click <strong>open</strong>. </li>
 				<li>This should open up your Screensaver preferences. Hit install, and select HHCC Creative as your default. </li>
 				<li>You can preview the screensaver full screen by clicking on the small preview to the right of the screensaver’s list.</li> 
 			</ol>
