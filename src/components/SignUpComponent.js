@@ -109,8 +109,9 @@ class SignUpComponent extends React.Component {
 				<li>Unarchive the .zip.</li> 
                 <li><strong>right-click</strong> on the HHCC Creative.saver file, and click <strong>open</strong>. </li>
 				<li>This should open up your Screensaver preferences. Hit install, and select HHCC Creative as your default. </li>
-				<li>You can preview the screensaver full screen by clicking on the small preview to the right of the screensaver’s list.</li> 
+				<li>You can preview the screensaver full screen by clicking on the small preview to the right of the screensaver’s list.</li>
 			</ol>
+            <p className="sub"><em>Questions? Hit up <a href="mailto:Rob.Erskine@hhcc.com">Rob.Erskine@hhcc.com</a> for help.</em></p>
 		</section>
 
 		<button className="show-instructions" onClick={this.toggleInstructions}>
